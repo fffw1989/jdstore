@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :carts
   namespace :admin do
     resources :products
   end
