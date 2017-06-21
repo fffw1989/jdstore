@@ -9,10 +9,16 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap/alert
-//= require_tree .
 //= require bootstrap/dropdown
+//= require bootstrap/alert
+//= require autosize.min
+//= require jquery.countdown.min
+//= require wow.min
+
+//= require_tree .
+
+$(document).ready(function(){
+  new WOW().init();
+})

@@ -17,10 +17,198 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
 
-
-//----common-----
+----common-----
 .col-centered {
   float: none;
   margin: 0 auto;
+}
+
+body {
+     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+     color: #666;                                        // 修改全站的字体主色 压低亮度
+     }
+
+
+
+
+
+.navbar-wrap {
+ width: 100%; /*铺满屏幕*/
+ background: #F5F5F5; /*背景颜色*/
+ font-size: 14px; /*字体12px*/
+ height: 50px; /*设置高度*/
+ line-height: 50px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+ color: #717171; /*字体颜色*/
+ list-style-type:none;
+}
+
+.navbar {
+  width: 1300px; /*设置导航栏宽度1200*/
+  margin: 0 auto; /*水平居中*/
+}
+
+.navbar-left {
+  float: left; /*你去左边*/
+}
+
+.navbar-list {
+  float: right; /*你去右边*/
+  list-style-type:none;
+}
+
+.navbar-listItem {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-left: 10px; /*左边加点空间，不然太挤啦*/
+  padding-right: 10px; /*右边加点空间，不然太挤啦*/
+}
+
+.navbar-spacer {
+  float: left; /*同样的，你也要float*/
+  width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
+  height: 14px; /*12px差不多，刚刚好*/
+  margin-top: 19px; /*调一下上边距*/
+  background: #ddd; /*分隔符的背景颜色*/
+}
+
+.navbar-wrap a {
+  color: #717171; /*文字的颜色*/
+  text-decoration: none; /*不要下划线啦，好丑*/
+}
+.navbar-wrap a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+
+.header {
+  width: 1200px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 30px; /*上边距*/
+  list-style-type:none;
+}
+
+.logo {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+.logo a {
+  font-size: 36px; /*设置字体36px*/
+  color: #C81623; /*红色*/
+  text-decoration: none; /*不要下划线*/
+}
+
+
+.search {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  width: 300px;
+  margin-left: 60px; /*右边距*/
+  margin-top: 10px; /*上边距*/
+  position: relative; /*相对定位*/
+}
+
+.search-input {
+  width: 300px;
+  height: 30px;
+  line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #666;
+  padding: 4px 20px; /*调一下上下左右边距*/
+  border-width: 2px; /*边框宽度为2px*/
+  border-color: #D32048; /*设置边框颜色为红色*/
+  border-style: solid; /*设置为实线*/
+  font-size: 14px; /*字体14px*/
+  font-family: "microsoft yahei"; /*设置成微软雅黑字体*/
+  border-radius: 20px; /*圆角20px*/
+}
+
+.search-button {
+  width: 54px;
+  height: 30px;
+  border: none; /*去掉button默认的border*/
+  background: none; /*去掉button默认的背景颜色*/
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  position: absolute; /*绝对定位*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  top: 0;
+  right: 0;
+}
+
+.search-button .fa-search {
+  color: #d32048; /*搜索图标的颜色*/
+}
+
+.cart-wrap {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-top: 10px; /*上边距*/
+  margin-left: 300px; /*左边距*/
+}
+
+.cart {
+  padding: 8px 20px; /*加内边距*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  border: 1px solid #DFDFDF; /*1像素，实线，灰色*/
+  background: #F5F5F5; /*灰色背景*/
+  font-size: 14px; /*字体小一点好看*/
+}
+
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+.cart a {
+  color: #6D6D6D; /*灰色字体*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+
+/*navbar导航栏*/
+.navbar {
+  width: 100%; /*铺满*/
+}
+.navbarContent {
+  width: 1200px; /*1200px，居中*/
+  margin: 0 auto;
+  height: 30px;
+}
+.navbarContent-left {
+  float: left; /*你去左边*/
+  width: 50%; /*你占一半的宽度*/
+  height: 30px;
+}
+.navbarContent-right {
+  float: right; /*你去右边*/
+  width: 50%; /*你也占一半的宽度*/
+  height: 30px;
 }
