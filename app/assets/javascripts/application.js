@@ -16,6 +16,7 @@
 //= require autosize.min
 //= require jquery.countdown.min
 //= require wow.min
+//= require bootstrap-sprockets
 
 //= require_tree .
 

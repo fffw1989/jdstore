@@ -1,39 +1,71 @@
-<div class="container">
+
+<!-- <div class="container"> -->
   <div class="row">
 
-    <div class="col-md-6">
-      <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail wow fadelnDown", data: {wow_delay: "1.5s" }) %>
-      <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-      <% end %>
-    </div>
-    <div class="col-md-6">
-      <h2> <%= @product.title %> </h2>
-      <div style="height:100px;">
-        <p>
-          <%= @product.description %>
-        </p>
-      </div>
-      <div> 数量 : <%= @product.quantity %> </div>
-      <div class="product-price"> ￥ <%= @product.price %> </div>
-      <div id="getting-started"></div>
-      <script type="text/javascript">
-        $("#getting-started")
-        .countdown("<%= Time.zone.now + 1.day %>", function(event) {
-          $(this).text(
-            event.strftime('%D days %H:%M:%S')
-          );
-        });
-      </script>
+    <div class="col-md-12">
+      <p class="location bg-color1"></p>
+      <div class="productDetail">
+      <div class="productDetail-left bg-color1">
+          <div class="productDetail-left-bigImage bg-color3">
+          <% if @product.image.present? %>
+
+            <%= image_tag(@product.image.medium.url, class: "thumbnail wow fadelnDown", data: {wow_delay: "1.5s" }) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+          <% end %>
+          </div>
+          <div class="productDetail-left-imageList">
+            <div class="productDetail-left-imageList-item bg-color4"></div>
+            <div class="productDetail-left-imageList-item bg-color4"></div>
+            <div class="productDetail-left-imageList-item bg-color4"></div>
+            <div class="productDetail-left-imageList-item bg-color4"></div>
+            <div class="productDetail-left-imageList-item bg-color4 productDetail-left-imageList-lastItem"></div>
+          </div>
       </div>
 
-      <div class="pull-right">
-        <% if @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
-        <% else %>
-        已售馨
-        <% end %>
-      </div>
-    </div>
-  </div>
+        <div>
+          <div class="productDetail-right bg-color2">
+          <h2> <%= @product.title %> </h2>
+              <div style="height:100px;">
+                <p>
+                  <%= @product.description %>
+                </p>
+              </div>
+              <div> 数量 : <%= @product.quantity %> </div>
+              <div class="product-price"> ￥ <%= @product.price %> </div>
+              <div id="getting-started"></div>
+              <script type="text/javascript">
+                $("#getting-started")
+                .countdown("<%= Time.zone.now + 1.day %>", function(event) {
+                  $(this).text(
+                    event.strftime('%D days %H:%M:%S')
+                  );
+                });
+              </script>
+
+          <div class="pull-right">
+            <% if @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
+            <% else %>
+            已售馨
+            <% end %>
+          </div>
+         </div>
+        </div>
+       </div>
+
+
+
+
+        <div class="productDecription">
+          <div class="productDecription-menuList bg-color1">
+            <div class="productDecription-menuList-item bg-color2"></div>
+            <div class="productDecription-menuList-item bg-color3"></div>
+          </div>
+          <div class="productDecription-content bg-color4"></div>
+        </div>
+
+     </div>
+
+ </div>
+<!-- </div> -->
