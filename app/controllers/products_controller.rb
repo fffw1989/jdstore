@@ -15,6 +15,24 @@ class ProductsController < ApplicationController
     @photos = @product.photos.all
   end
 
+  def update
+    @product = Product.find(params[:id])
+
+    if params[:photos] != nil
+      @product.photos.destroy_all   #先清除原有的图片
+
+      params[:photos]['avatar'].each do |a|
+        @photo = @product.photos.create(:avatar => a)
+      end
+    end
+
+    if @product.update(product_params)
+      redirect_to admin_products_path,notice: "更新成功！"
+    else
+      render :edit
+    end
+  end
+
 
   def add_to_cart
     @product = Product.find(params[:id])

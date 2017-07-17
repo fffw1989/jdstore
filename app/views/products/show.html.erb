@@ -1,31 +1,38 @@
 
-<!-- <div class="container"> -->
-  <div class="row">
-
-    <div class="col-md-12">
-      <p class="location bg-color1"></p>
-      <div class="productDetail">
+    <div class="productDetail">
       <div class="productDetail-left bg-color1">
-          <div class="productDetail-left-bigImage bg-color3">
-          <% if @product.image.present? %>
+          <% if @photos.present? %>
 
-            <%= image_tag(@product.image.medium.url, class: "thumbnail wow fadelnDown", data: {wow_delay: "1.5s" }) %>
+                <div class="productDetail-left-bigImage">
+                  <%= image_tag(@product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
+                </div>
+
+                <div class="productDetail-left-imageList ">
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag(@product.photos[0].avatar.medium.url, class: "thumbnail img-responsive")  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag(@product.photos[1].avatar.medium.url, class: "thumbnail img-responsive")  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag(@product.photos[2].avatar.medium.url, class: "thumbnail img-responsive")  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag(@product.photos[3].avatar.medium.url, class: "thumbnail img-responsive")  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item bg-color4 productDetail-left-imageList-lastItem">
+                    <%= image_tag(@product.photos[3].avatar.medium.url, class: "thumbnail img-responsive")  %>
+                  </div>
+                </div>
+
           <% else %>
-            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
           <% end %>
-          </div>
-          <div class="productDetail-left-imageList">
-            <div class="productDetail-left-imageList-item bg-color4"></div>
-            <div class="productDetail-left-imageList-item bg-color4"></div>
-            <div class="productDetail-left-imageList-item bg-color4"></div>
-            <div class="productDetail-left-imageList-item bg-color4"></div>
-            <div class="productDetail-left-imageList-item bg-color4 productDetail-left-imageList-lastItem"></div>
-          </div>
+
       </div>
 
-        <div>
-          <div class="productDetail-right bg-color2">
-          <h2> <%= @product.title %> </h2>
+        <div class="productDetail-right bg-color2">
+             <h2> <%= @product.title %> </h2>
               <div style="height:100px;">
                 <p>
                   <%= @product.description %>
@@ -43,29 +50,37 @@
                 });
               </script>
 
-          <div class="pull-right">
-            <% if @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
+            <div class="pull-right">
+              <% if @product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
+              <% else %>
+              已售馨
+              <% end %>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="productDecription">
+      <div class="productDecription-menuList bg-color1">
+        <div class="productDecription-menuList-item bg-color2">商品详情</div>
+        <div class="productDecription-menuList-item bg-color3">商品评价</div>
+      </div>
+
+      <div class="productDecription-content bg-color4">
+           <% if @photos.present? %>
+              <% @photos.each_with_index do |p, index| %>
+                 <% if index == 0 %>                          #第一幅图片显示为大图（index=0）
+                   <%= image_tag p.avatar.medium.url %>
+                   <div style="letter-spacing: -8px">
+                 <% else %>
+                   <%= image_tag p.avatar.thumb.url %>
+                 <% end %>
+               <% end %>
+               </div>
             <% else %>
-            已售馨
-            <% end %>
-          </div>
-         </div>
-        </div>
-       </div>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %><br>
+      </div>
 
-
-
-
-        <div class="productDecription">
-          <div class="productDecription-menuList bg-color1">
-            <div class="productDecription-menuList-item bg-color2"></div>
-            <div class="productDecription-menuList-item bg-color3"></div>
-          </div>
-          <div class="productDecription-content bg-color4"></div>
-        </div>
-
-     </div>
-
- </div>
-<!-- </div> -->
+    </div>
