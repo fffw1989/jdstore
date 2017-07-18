@@ -19,14 +19,15 @@
   </div>
 
    <div class="group">
-   <%= f.input :image, as: :file %>
+     <%= f.label :avatar %><br/>
+     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+   <!-- <%= f.input :image, as: :file %> -->
    </div>
 
     <div class="group">
      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别")%>
     </div>
-   <%= f.label :avatar %><br>
-   <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+
    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>

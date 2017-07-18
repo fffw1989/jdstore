@@ -11,8 +11,6 @@ class Product < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
-  has_many :comments
-
   belongs_to :category, :optional => true
 
   has_many :product_details
