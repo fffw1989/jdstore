@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html>
 <div class="container">
-	<div class="row">
+	<div class="row col-centered">
 
-    <html>
+
         <head>
             <title>鲜肉铺</title>
             <%= csrf_meta_tags %>
@@ -19,12 +20,13 @@
                 <%= render "common/navbar" %>
                 <%= render "common/flashes" %>
                 <%= yield %>
+
+
+                <%= render "common/footer" %>
             </div>
-
-            <%= render "common/footer" %>
-
         </body>
-    </html>
+
 
  </div>
 </div>
+</html>

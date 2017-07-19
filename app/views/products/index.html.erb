@@ -91,25 +91,26 @@
 
 
 
-    <div class="orderList bg-color1">
-      <div class="orderList-item bg-color2">商品排序：</div>
-      <div class="orderList-item bg-color3">好评</div>
-      <div class="orderList-item bg-color4">销量</div>
-      <div class="orderList-item bg-color5">价格</div>
-    </div>
+  <div class="orderList bg-color1">
+    <div class="orderList-item bg-color2">商品排序：</div>
+    <div class="orderList-item bg-color3">好评</div>
+    <div class="orderList-item bg-color4">销量</div>
+    <div class="orderList-item bg-color5">价格</div>
+  </div>
 
 </br>
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-sm-4 col-md-3 ">
-      <%= link_to product_path(product) do %>
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
-
+		<% @products.each do |product| %>
+			<div class="col-xs-6 col-sm-4 col-md-3 ">
+				<%= link_to product_path(product) do %>
+					<% if product.photos.present? %>
+						<%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+					<% else %>
+						<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+					<% end %>
+				<% end %>
+				<div class="product-info">
+				 <p><%= link_to(product.title,product_path(product)) %> ￥ <%= product.price %></p>
+				</div>
+			</div>
+		<% end %>
 </html>
