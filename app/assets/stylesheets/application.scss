@@ -31,14 +31,9 @@ body {
      }
 
 
-.navbar{
-  height: 1px;
-  padding-bottom: 0px;
-}
-
 
 .navbar-wrap {
- // width: 100%; /*铺满屏幕*/
+ width: 100%; /*铺满屏幕*/
  background: rgb(255, 255, 255); /*背景颜色*/
  background-size: 10px;
  font-size: 12px; /*字体12px*/
@@ -62,13 +57,6 @@ body {
   padding-right: 10px; /*右边加点空间，不然太挤啦*/
 }
 
-.navbar-spacer {
-  float: left; /*同样的，你也要float*/
-  width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
-  height: 12px; /*12px差不多，刚刚好*/
-  margin-top: 19px; /*调一下上边距*/
-  background: #ddd; /*分隔符的背景颜色*/
-}
 
 .navbar-wrap a {
   color: #717171; /*文字的颜色*/
@@ -82,23 +70,16 @@ body {
 .header {
   width: 1200px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
-  margin-left:  -20px; /*左边距*/
+  margin-left:  0px; /*左边距*/
   padding-bottom: 0px; /*下边距*/
   list-style-type:none;
   margin-top: -10px;
   margin-bottom: 20px;
 }
 
-.logo {
-  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
-  margin-right: 20px; /*加点右边距，和search模块拉开距离*/
-}
-
-.logo a {
-  font-size: 36px; /*设置字体36px*/
-  margin: 0 auto; /*水平居中*/
-  color: #C81623; /*红色*/
-  text-decoration: none; /*不要下划线*/
+.navbar-brand{
+  margin-top: -16px;
+  margin-left: 25px;
 }
 
 
@@ -181,7 +162,6 @@ body {
 //
 // .bg-color2 {
 //   background: #F25F5C;
-//   font-size: 20px;
 // }
 //
 // .bg-color3 {
@@ -200,7 +180,7 @@ body {
 
 .navbarContent {
   width: 1200px; /*1200px，居中*/
-  margin-left: -20px;
+  margin-left: 0px;
   height: 20px;
 }
 .navbarContent-left {
@@ -216,12 +196,6 @@ body {
   height: 30px;
 }
 
-
-/*头部*/
-// .header {
-//   width: 1200px;
-//   margin-left: -20px;
-// }
 
 .headerContent {
   height: 50px;
@@ -250,22 +224,43 @@ body {
 /*菜单*/
 .menu {
   width: 100%;
-  height: 25px;
+  height: 35px;
   margin-bottom: 25px;
-  margin-left: -20px;
+  margin-left: 0px;
 }
 
 .menuList {
+  margin-left: -14px;
   width: 1200px;
-  margin: 2px auto;
-  height: 40px;
+  height: 10px;
   font-size: 18px;
+
+}
+
+.menuList-item-1 {
+  margin-bottom: 10px;
+  float: left;
+  width: 128px;
+  height: 30px;
+}
+
+
+
+.menuList-item a {
+
+  color: #666666;
+}
+
+.menuList-item a:hover {
+  color: #d9534f;
 }
 
 .menuList-item {
+  font-size: 18px;
+  margin-top: 12px;
   float: left;
-  width: 128px;
-  height: 40px;
+  width: 98px;
+  height: 35px;
 }
 
 /*轮播图*/
@@ -284,20 +279,37 @@ body {
   overflow: hidden;
 }
 
+.orderList :hover{
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
 .orderList-item {
   float: left;
   width: 118px;
   height: 42px;
-  font-size: 22px;
+  font-size: 19px;
 }
+
+.orderList-item-1 {
+  float: left;
+  width: 60px;
+  height: 42px;
+  font-size: 17px;
+}
+
+
 
 /*当前位置*/
 .location {
 	width: 1200px;
-	margin-left: -20px;
-	height: 15px;
+	height: 25px;
+  font-size: 18px;
+  color: #337ab7;
 }
 
+.location :hover {
+  color: #d9534f;
+}
 
 /*商品信息*/
 .productDetail {
@@ -346,19 +358,30 @@ body {
 }
 
 .productDecription-menuList {
+  background: #666666; /*背景颜色*/
+  border: 1px solid #50514F;
 	height: 35px;
 }
 
 .productDecription-menuList-item {
+  color: #f5f5f5;
+  font-size: 20px;
 	float: left;
-	width: 175px;
+	width: 100px;
 	height: 35px;
+  margin-left: 10px;
+}
+
+.productDecription :hover {
+  color: #d9534f;
 }
 
 .productDecription-content {
 	width: 500px;
-	height: 1500px;
-	margin: 10px auto;
+	height: 2690px;
+  margin-left: 200px;
+  margin-top: 10px;
+	// margin: 10px auto;
 }
 
 /*轮播控制*/
@@ -368,7 +391,9 @@ body {
   transition: transform 1s ease-in-out;
 }
 
-
+.product-info :hover{
+  color: #d9534f;
+}
 
 
 
