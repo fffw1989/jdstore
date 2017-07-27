@@ -4,4 +4,11 @@ module ProductsHelper
     highlight(excerpt_cont, query_string)
   end
 
+  def render_active(index)
+    if index == 0
+      "active"
+    end
+  end
+  
+
 end

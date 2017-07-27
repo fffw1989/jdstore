@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
   <p class="location bg-color1 col-gra"><%= link_to("首页", products_path)%> >
     <% Category.all.each do |category| %>
           <% if @product.category.name == category.name %>
@@ -42,6 +43,51 @@
 
         <div class="productDetail-right bg-color2">
              <h2> <%= @product.title %> </h2>
+=======
+
+
+
+      <div class="productDetail">
+
+      <div class="productDetail-left">
+        <div class="productDetail-left-bigImage">
+          <% if @photos.present? %>
+             <div class="tab-content clear-fix">
+               <% @photos.each_with_index do |p,index| %>
+                 <% if index <4 %>
+                  <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>">
+                    <%= image_tag(p.avatar.medium.url, class: "thumbnail") %>
+                  </div>
+                 <% end %>
+               <% end %>
+             </div>
+           </div>
+
+           <div class="productDetail-left-imageList">
+             <ul class="nav nav-tabs">
+               <% @photos.each_with_index do |p,index| %>
+
+                 <% if index <4 %>
+
+                   <li>
+                     <a href="#<%= index %>" data-toggle="tab"><%= image_tag(p.avatar.thumb.url) %></a>
+                   </li>
+
+                 <% end %>
+               <% end %>
+
+            <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
+            <% end %>
+
+           </ul>
+         </div>
+      </div>
+
+
+        <div class="productDetail-right">
+          <h2> <%= @product.title %> </h2>
+>>>>>>> avatar
               <div style="height:100px;">
                 <p>
                   <%= @product.description %>
@@ -60,15 +106,25 @@
                 });
               </script>
 
+<<<<<<< HEAD
             <div class="pull-left">
+=======
+            <div class="pull-right">
+>>>>>>> avatar
               <% if @product.quantity > 0 %>
               <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
               <% else %>
               已售馨
               <% end %>
             </div>
+<<<<<<< HEAD
         </div>
     </div>
+=======
+         </div>
+      </div>
+
+>>>>>>> avatar
 
 
     <div class="productDecription">
@@ -77,6 +133,7 @@
         <div class="productDecription-menuList-item bg-color3">商品评价</div>
       </div>
 
+<<<<<<< HEAD
       <div class="productDecription-content bg-color4">
            <% if @photos.present? %>
               <% @photos.each_with_index do |p, index| %>
@@ -106,3 +163,13 @@
               <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
           <% end %><br>
     </div> -->
+=======
+        <div class="productDecription">
+        <div class="productDecription-menuList bg-color1">
+          <div class="productDecription-menuList-item bg-color2">商品详情</div>
+          <div class="productDecription-menuList-item bg-color3">用户评价</div>
+        </div>
+        <div class="productDecription-content bg-color4">
+          pic
+      </div>
+>>>>>>> avatar

@@ -174,6 +174,15 @@ body {
 //   background: #70C1B3;
 //   font-size: 25px;
 // }
+<<<<<<< HEAD
+=======
+
+
+// .bg-color5 {
+//   // background: #70C1B3;
+//   font-size: 25px;
+// }
+>>>>>>> avatar
 
 
 /*navbar导航栏*/
@@ -326,24 +335,44 @@ body {
 
 .productDetail-right {
 	float: right; /*你去右边*/
+<<<<<<< HEAD
 	width: 644px;
 	height: 420px;
+=======
+	width: 544px;
+	height: 518px;
+>>>>>>> avatar
 }
 
 .productDetail-left-bigImage {
 	width: 420px;
+<<<<<<< HEAD
 	height: 320px;
+=======
+	height: 420px;
+  margin: 20px;
+>>>>>>> avatar
 }
 
 .productDetail-left-imageList {
-	margin-top: 15px;
+	margin-top: 85px;
+  float: left;
 }
 
+<<<<<<< HEAD
 .productDetail-left-imageList-item {
 	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
 	width: 72px;
 	height: 58px;
 	margin-right: 15px;
+=======
+.nav nav-tabs{
+  float: left;
+  width: 80px;
+	margin: 5px auto;
+	height: 20px;
+
+>>>>>>> avatar
 }
 
 .productDetail-left-imageList-lastItem {
@@ -353,7 +382,11 @@ body {
 /*商品详情*/
 .productDecription {
 	width: 1200px;
+<<<<<<< HEAD
 	margin-top: -20px;
+=======
+	margin: 120px auto;
+>>>>>>> avatar
 	border: 1px solid #50514F;
 }
 

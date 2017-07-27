@@ -2,7 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
+<<<<<<< HEAD
 	<title>苏食</title>
+=======
+	<title>肉庄</title>
+>>>>>>> avatar
 	<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -99,6 +103,7 @@
   </div>
 
 </br>
+<<<<<<< HEAD
 		<% @products.each do |product| %>
 			<div class="col-xs-6 col-sm-4 col-md-3 ">
 				<%= link_to product_path(product) do %>
@@ -113,4 +118,19 @@
 				</div>
 			</div>
 		<% end %>
+=======
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-sm-4 col-md-3 ">
+      <%= link_to product_path(product) do %>
+			    <% if product.photos.present? %>
+			       <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+					<% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+
+>>>>>>> avatar
 </html>
