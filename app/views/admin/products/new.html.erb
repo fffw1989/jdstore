@@ -18,17 +18,13 @@
     <%= f.input :price %>
   </div>
 
-<<<<<<< HEAD
-   <!-- <div class="group">
-   <%= f.input :image, as: :file %>
-   </div> -->
-=======
+
    <div class="group">
      <%= f.label :avatar %><br/>
      <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
    <!-- <%= f.input :image, as: :file %> -->
    </div>
->>>>>>> avatar
+
 
     <div class="group">
      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别")%>
